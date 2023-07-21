@@ -53,7 +53,7 @@ function updateClockDisplay() {
 }
 
 // Update time
-function changeNumbers() {
+function changeTime() {
   time.onesMilisecond++;
   if (time.onesMilisecond > 9) 
   {
@@ -96,7 +96,7 @@ function changeNumbers() {
 function startClock() {
   if (!clockStarted) {
     clockStarted = true;
-    interval = setInterval(changeNumbers, 10);
+    interval = setInterval(changeTime, 10);
   }
 }
 
@@ -106,11 +106,11 @@ function stopClock() {
   clearInterval(interval);
 }
 
+//Reset 
+resetClock();
 
 // Event listeners
 startButton.addEventListener('click', startClock);
 stopButton.addEventListener('click', stopClock);
 resetButton.addEventListener('click', resetClock);
 
-//Reset 
-resetClock();
